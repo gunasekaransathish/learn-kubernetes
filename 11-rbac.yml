@@ -30,7 +30,7 @@ metadata:
 rules:
 - apiGroups: ["*"]
   resources: ["secrets"]
-  #resourceNames: ["app-sec1"]
+  resourceNames: ["app-sec1"]
   verbs: ["get"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
