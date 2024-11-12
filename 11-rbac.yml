@@ -25,6 +25,8 @@ spec:
       envFrom:
       - secretRef:
           name: app-sec1
+      - secretRef:
+          name: app-sec2
 ---
 kind: Pod
 apiVersion: v1
