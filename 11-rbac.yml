@@ -53,7 +53,7 @@ roleRef:
   name: app1-role
 subjects:
 - kind: Group
-  name: system:serviceaccounts:app1
+  name: system:serviceaccount:default:app1
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -66,7 +66,7 @@ roleRef:
   name: app2-role
 subjects:
 - kind: Group
-  name: system:serviceaccounts:app2
+  name: system:serviceaccount:default:app2
   apiGroup: rbac.authorization.k8s.io
 ---
 kind: Pod
