@@ -1,4 +1,14 @@
-#### The problem
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: app1
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: app2
+---
 apiVersion: v1
 kind: Secret
 metadata:
@@ -13,12 +23,12 @@ metadata:
 data:
   APP2_PASSWORD: eHl6QDMyMQ==
 ---
----
 kind: Pod
 apiVersion: v1
 metadata:
   name: debug-app-01
 spec:
+  serviceAccountName: app1
   containers:
     - name: debug
       image: rkalluru/debug
@@ -33,6 +43,7 @@ apiVersion: v1
 metadata:
   name: debug-app-02
 spec:
+  serviceAccountName: app2
   containers:
     - name: debug
       image: rkalluru/debug
