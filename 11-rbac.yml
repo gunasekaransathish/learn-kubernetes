@@ -31,7 +31,7 @@ rules:
 - apiGroups: ["*"]
   resources: ["secrets"]
   #resourceNames: ["app-sec1"]
-  verbs: ["get"]
+  verbs: ["*"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
