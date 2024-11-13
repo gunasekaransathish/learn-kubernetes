@@ -44,7 +44,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    appName: web
+    appType: web
   ports:
     - protocol: TCP
       port: 80
@@ -58,7 +58,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    appName: app
+    appType: app
   ports:
     - protocol: TCP
       port: 80
