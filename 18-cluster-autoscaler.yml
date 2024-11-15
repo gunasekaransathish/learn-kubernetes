@@ -157,9 +157,9 @@ spec:
               memory: 600Mi
           environment:
             - name: AWS_ACCESS_KEY_ID
-              value: ""
+              value: "x"
             - name: AWS_SECRET_ACCESS_KEY
-              value: ""
+              value: "x"
             - name: AWS_REGION
               value: "us-east-1"
           command:
