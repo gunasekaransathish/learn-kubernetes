@@ -11,7 +11,7 @@ spec:
           - key: disktype
             operator: In
             values:
-            - ssd
+            - ssdx
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
