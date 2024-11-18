@@ -19,5 +19,5 @@ spec:
         image: nginx:1.17
         ports:
         - containerPort: 80
-        topologySpreadConstraints:
-          - nodeTaintsPolicy: Ignore
+      topologySpreadConstraints:
+        - nodeTaintsPolicy: Ignore
