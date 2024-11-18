@@ -16,10 +16,10 @@ spec:
       - weight: 1
         preference:
           matchExpressions:
-          - key: disktype
+          - key: topology.kubernetes.io/zone
             operator: In
             values:
-            - ssd
+            - us-east-1d
   containers:
   - name: with-node-affinity
     image: registry.k8s.io/pause:2.0
