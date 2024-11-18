@@ -9,4 +9,19 @@ spec:
   - name: nginx
     image: nginx
     imagePullPolicy: IfNotPresent
-
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-2
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  tolerations:
+  - key: "priority"
+    operator: "Exists"
+    effect: "NoSchedule"
