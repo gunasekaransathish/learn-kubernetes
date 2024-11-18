@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: vpa-test
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: vpa
