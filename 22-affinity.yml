@@ -11,15 +11,15 @@ spec:
           - key: disktype
             operator: In
             values:
-            - ssdx
+            - hdd
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
           matchExpressions:
-          - key: topology.kubernetes.io/zone
+          - key: disktype
             operator: In
             values:
-            - us-east-1d
+            - ssd
   containers:
   - name: with-node-affinity
     image: registry.k8s.io/pause:2.0
