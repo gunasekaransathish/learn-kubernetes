@@ -24,4 +24,5 @@ spec:
   tolerations:
   - key: "priority"
     operator: "Exists"
+    value: "one"
     effect: "NoSchedule"
