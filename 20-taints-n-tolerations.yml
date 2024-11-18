@@ -23,6 +23,6 @@ spec:
     imagePullPolicy: IfNotPresent
   tolerations:
   - key: "priority"
-    operator: "Exists"
+    operator: "Equal"
     value: "one"
     effect: "NoSchedule"
