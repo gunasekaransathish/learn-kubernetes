@@ -29,7 +29,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -45,5 +45,5 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            cpu: 1800m
+            cpu: 1500m
 
