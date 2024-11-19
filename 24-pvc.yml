@@ -10,3 +10,19 @@ spec:
       storage: 5Gi  # Request 5 GiB of storage
   storageClassName: gp2  # Reference the StorageClass you created
 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-pvc
+spec:
+  containers:
+    - name: debug-container
+      image: rkalluru/debug  # Using the specified image
+      volumeMounts:
+        - mountPath: /app  # Mount the PVC to this path inside the container
+          name: app-volume  # Name of the volume that refers to the PVC
+  volumes:
+    - name: app-volume
+      persistentVolumeClaim:
+        claimName: my-pvc  # Reference to the PVC you created earlier
