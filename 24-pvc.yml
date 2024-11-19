@@ -1,3 +1,14 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ebs-sc  # Name of the StorageClass
+provisioner: ebs.csi.aws.com  # EBS CSI provisioner
+parameters:
+  type: gp3  # EBS volume type (could be 'gp2', 'io1', 'st1', etc.)
+  fsType: ext4  # Filesystem type for the volume (usually 'ext4' or 'xfs')
+reclaimPolicy: Retain  # When the PVC is deleted, the PV is retained (alternative: Delete)
+volumeBindingMode: WaitForFirstConsumer  # Volume binding mode; can be Immediate or WaitForFirstConsumer
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -8,7 +19,7 @@ spec:
   resources:
     requests:
       storage: 5Gi  # Request 5 GiB of storage
-  storageClassName: gp2  # Reference the StorageClass you created
+  storageClassName: ebs-sc  # Reference the StorageClass you created
 
 ---
 apiVersion: v1
