@@ -48,7 +48,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    appName: frontend
+    app: frontend
   ports:
     - protocol: TCP
       port: 80
@@ -88,7 +88,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    appName: catalogue
+    app: catalogue
   ports:
     - protocol: TCP
       port: 8080
@@ -151,7 +151,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    appName: user
+    app: user
   ports:
     - protocol: TCP
       port: 8080
@@ -193,7 +193,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    appName: cart
+    app: cart
   ports:
     - protocol: TCP
       port: 8080
@@ -233,7 +233,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    appName: shipping
+    app: shipping
   ports:
     - protocol: TCP
       port: 8080
@@ -358,7 +358,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    appName: payment
+    app: payment
   ports:
     - protocol: TCP
       port: 8080
