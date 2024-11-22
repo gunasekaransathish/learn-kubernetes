@@ -184,7 +184,7 @@ spec:
           - name: CATALOGUE_PORT
             value: "8080"
           - name: REDIS_HOST
-            value: redis-dev.rdevops81.online
+            value: redis-dev.rdevopsb81.online
 ---
 apiVersion: v1
 kind: Service
