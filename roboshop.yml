@@ -79,7 +79,7 @@ spec:
           - name: MONGO
             value: "true"
           - name: MONGO_URL
-            value: "mongodb://mongo-dev.rdevopsb81.online:27017/catalogue"
+            value: "mongodb://mongodb-dev.rdevopsb81.online:27017/catalogue"
 ---
 apiVersion: v1
 kind: Service
@@ -110,7 +110,7 @@ spec:
           - name: APP_GIT_URL
             value: https://github.com/roboshop-devops-project-v3/catalogue
           - name: DB_HOST
-            value: mongo-dev.rdevopsb81.online
+            value: mongodb-dev.rdevopsb81.online
           - name: SCHEMA_FILE
             value: db/master-data.js
       restartPolicy: Never
@@ -140,7 +140,7 @@ spec:
           - name: MONGO
             value: "true"
           - name: MONGO_URL
-            value: "mongodb://mongo-dev.rdevopsb81.online:27017/users"
+            value: "mongodb://mongodb-dev.rdevopsb81.online:27017/users"
           - name: REDIS_URL
             value: "redis://redis-dev.rdevopsb81.online:6379"
 ---
