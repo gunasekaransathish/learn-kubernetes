@@ -77,7 +77,7 @@ spec:
         - containerPort: 8080
         env:
           - name: MONGO
-            value: true
+            value: "true"
           - name: MONGO_URL
             value: "mongodb://mongo-dev.rdevopsb81.online:27017/catalogue"
 ---
@@ -138,7 +138,7 @@ spec:
         - containerPort: 8080
         env:
           - name: MONGO
-            value: true
+            value: "true"
           - name: MONGO_URL
             value: "mongodb://mongo-dev.rdevopsb81.online:27017/users"
           - name: REDIS_URL
@@ -222,7 +222,7 @@ spec:
         - containerPort: 8080
         env:
           - name: CART_ENDPOINT
-            value: cart:8080
+            value: "cart:8080"
           - name: DB_HOST
             value: mysql-dev.rdevopsb81.online
 ---
