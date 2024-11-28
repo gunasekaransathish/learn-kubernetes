@@ -1,3 +1,4 @@
 FROM        docker.io/redhat/ubi8
-ENTRYPOINT  ["echo", "Hello World"]
+RUN         dnf install nginx -y
+ENTRYPOINT  ["nginx", "-g", "daemon off;"]
 
