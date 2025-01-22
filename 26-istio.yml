@@ -101,3 +101,7 @@ spec:
     - source:
         notPrincipals: ["cluster.local/ns/default/sa/debug1"]
 
+    to:
+    - operation:
+        methods: ["POST"]
+
