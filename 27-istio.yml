@@ -1,0 +1,108 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: example
+  labels:
+    istio-injection: enabled
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  namespace: example
+  labels:
+    appName: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+      - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: example
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    appName: nginx
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: debug1
+  namespace: example
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug1
+  namespace: example
+  labels:
+    appName: debug1
+spec:
+  serviceAccountName: debug1
+  containers:
+    - name: debug1
+      image: rkalluru/debug
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: debug2
+  namespace: example
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug2
+  namespace: example
+  labels:
+    appName: debug2
+spec:
+  serviceAccountName: debug2
+  containers:
+    - name: debug2
+      image: rkalluru/debug
+
+---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+spec:
+  mtls:
+    mode: STRICT  # Enforce mTLS for all services in this namespace
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+ name: allow-debug
+ namespace: example
+spec:
+  selector:
+    matchLabels:
+      appName: nginx
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/example/sa/debug1"]
+  - to:
+    - operation:
+        paths: ["/"]
+        methods: ["GET"]
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: deny-others
+  namespace: example
+spec:
+  {}
