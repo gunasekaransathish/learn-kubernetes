@@ -103,7 +103,7 @@ apiVersion: security.istio.io/v1
 kind: AuthorizationPolicy
 metadata:
   name: deny-others
-  namespace: default
+  namespace: example
 spec:
   selector:
     matchLabels:
