@@ -120,4 +120,5 @@ spec:
     to:
     - operation:
         methods: ["POST"]
+        paths: ["/"]
 
