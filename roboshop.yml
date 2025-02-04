@@ -79,7 +79,7 @@ spec:
           - name: MONGO
             value: "true"
           - name: MONGO_URL
-            value: "mongodb://mongodb-dev.rdevopsb81.online:27017/catalogue"
+            value: "mongodb://mongodb-dev.harsharoboticshop.online:27017/catalogue"
 ---
 apiVersion: v1
 kind: Service
@@ -110,7 +110,7 @@ spec:
           - name: APP_GIT_URL
             value: https://github.com/roboshop-devops-project-v3/catalogue
           - name: DB_HOST
-            value: mongodb-dev.rdevopsb81.online
+            value: mongodb-dev.harsharoboticshop.online
           - name: SCHEMA_FILE
             value: db/master-data.js
       restartPolicy: Never
@@ -140,9 +140,9 @@ spec:
           - name: MONGO
             value: "true"
           - name: MONGO_URL
-            value: "mongodb://mongodb-dev.rdevopsb81.online:27017/users"
+            value: "mongodb://mongodb-dev.harsharoboticshop.online:27017/users"
           - name: REDIS_URL
-            value: "redis://redis-dev.rdevopsb81.online:6379"
+            value: "redis://redis-dev.harsharoboticshop.online:6379"
 ---
 apiVersion: v1
 kind: Service
@@ -184,7 +184,7 @@ spec:
           - name: CATALOGUE_PORT
             value: "8080"
           - name: REDIS_HOST
-            value: redis-dev.rdevopsb81.online
+            value: redis-dev.harsharoboticshop.online
 ---
 apiVersion: v1
 kind: Service
@@ -224,7 +224,7 @@ spec:
           - name: CART_ENDPOINT
             value: "cart:8080"
           - name: DB_HOST
-            value: mysql-dev.rdevopsb81.online
+            value: mysql-dev.harsharoboticshop.online
 ---
 apiVersion: v1
 kind: Service
@@ -255,7 +255,7 @@ spec:
           - name: APP_GIT_URL
             value: https://github.com/roboshop-devops-project-v3/shipping
           - name: DB_HOST
-            value: mysql-dev.rdevopsb81.online
+            value: mysql-dev.harsharoboticshop.online
           - name: SCHEMA_FILE
             value: db/app-user.sql
           - name: DB_USER
@@ -280,7 +280,7 @@ spec:
           - name: APP_GIT_URL
             value: https://github.com/roboshop-devops-project-v3/shipping
           - name: DB_HOST
-            value: mysql-dev.rdevopsb81.online
+            value: mysql-dev.harsharoboticshop.online
           - name: SCHEMA_FILE
             value: db/schema.sql
           - name: DB_USER
@@ -305,7 +305,7 @@ spec:
           - name: APP_GIT_URL
             value: https://github.com/roboshop-devops-project-v3/shipping
           - name: DB_HOST
-            value: mysql-dev.rdevopsb81.online
+            value: mysql-dev.harsharoboticshop.online
           - name: SCHEMA_FILE
             value: db/master-data.sql
           - name: DB_USER
@@ -345,7 +345,7 @@ spec:
           - name: USER_PORT
             value: "8080"
           - name: AMQP_HOST
-            value: rabbitmq-dev.rdevopsb81.online
+            value: rabbitmq-dev.harsharoboticshop.online
           - name: AMQP_USER
             value: roboshop
           - name: AMQP_PASS
